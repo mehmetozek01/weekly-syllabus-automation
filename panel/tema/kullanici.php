@@ -177,7 +177,7 @@ include 'includes/footer.php';
       <!-- Kullanıcı Email -->
       <label>Kullanıcı Email *</label>
       <!-- Email kontrol -->
-      <input onkeyup="emailKontrol(this)" required type="email" class="form-control mb-4" name="email" id="email" placeholder="Kullanıcı Email">
+      <input required type="email" name="email"  placeholder="Kullanıcı Email" class="form-control mb-4" id="email" pattern="[a-z0-9._%+-]+@gmail\.com|[a-z0-9._%+-]+@hotmail\.com|[a-z0-9._%+-]+@okul\.com" oninvalid="this.setCustomValidity('Lütfen gmail.com, hotmail.com veya okul.com domainlerinden birini kullanan bir email adresi girin')" oninput="setCustomValidity('')">
       <label>Şifre Belirleyin</label>
       <input type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
 
