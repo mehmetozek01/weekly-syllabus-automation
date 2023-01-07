@@ -179,7 +179,7 @@ include 'includes/footer.php';
       <!-- Email kontrol -->
       <input required type="email" name="email"  placeholder="Kullanıcı Email" class="form-control mb-4" id="email" pattern="[a-z0-9._%+-]+@gmail\.com|[a-z0-9._%+-]+@hotmail\.com|[a-z0-9._%+-]+@okul\.com" oninvalid="this.setCustomValidity('Lütfen gmail.com, hotmail.com veya okul.com domainlerinden birini kullanan bir email adresi girin')" oninput="setCustomValidity('')">
       <label>Şifre Belirleyin</label>
-      <input type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
+      <input required type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
 
       <button type="submit" class="btn btn-primary mb-2 d-grid w-100">Kayıt Et</button>
     </form>
@@ -209,28 +209,28 @@ include 'includes/footer.php';
   }
 
   // Ad soyad - Email boş olup olmadığını kontrol eder
-  function kullaniciGuncelle(e) {
-    var formum = $("#kategoriEdit").serialize();
-    if ($("#ad_soyad").val() == "") {
-      toastr.error("Ad Soyad Boş Olamaz");
-    } else if ($("#email").val() == "") {
-      toastr.error("Email Boş Olamaz");
-    } else {
-      $.ajax({
-        type: "POST",
-        data: formum,
-        url: "../action/action.php?action=kullaniciGuncelle",
-        success: function(data) {
-          toastr.success("Güncelleme İşlemi Başarılı");
-          $("#kategoriBodyDiv").load("../action/action.php?action=kullaniciList");
-          $("#animationModal").modal('toggle');
-          //window.location.reload(false);
-
-        }
-      });
+function kullaniciGuncelle(e) {
+  var formum = $("#kategoriEdit").serialize();
+  if ($("#ad_soyad").val() == "") {
+    toastr.error("Ad Soyad boş bırakılamaz!");
+    return false;
+  } 
+  if ($("#email").val() == "") {
+    toastr.error("Email boş bırakılamaz!");
+    return false;
+  } 
+  $.ajax({
+    type: "POST",
+    data: formum,
+    url: "../action/action.php?action=kullaniciGuncelle",
+    success: function(data) {
+      toastr.success("Güncelleme işlemi başarılı!");
+      $("#kategoriBodyDiv").load("../action/action.php?action=kullaniciList");
+      $("#animationModal").modal('toggle');
+      //window.location.reload(false);
     }
-
-  }
+  });
+}
   // Kullanıcıya verdiği id
 
   function editBtn(e) {
