@@ -209,28 +209,28 @@ include 'includes/footer.php';
   }
 
   // Ad soyad - Email boş olup olmadığını kontrol eder
-  function kullaniciGuncelle(e) {
-    var formum = $("#kategoriEdit").serialize();
-    if ($("#ad_soyad").val() == "") {
-      toastr.error("Ad Soyad Boş Olamaz");
-    } else if ($("#email").val() == "") {
-      toastr.error("Email Boş Olamaz");
-    } else {
-      $.ajax({
-        type: "POST",
-        data: formum,
-        url: "../action/action.php?action=kullaniciGuncelle",
-        success: function(data) {
-          toastr.success("Güncelleme İşlemi Başarılı");
-          $("#kategoriBodyDiv").load("../action/action.php?action=kullaniciList");
-          $("#animationModal").modal('toggle');
-          //window.location.reload(false);
-
-        }
-      });
+function kullaniciGuncelle(e) {
+  var formum = $("#kategoriEdit").serialize();
+  if ($("#ad_soyad").val() == "") {
+    toastr.error("Ad Soyad boş bırakılamaz!");
+    return false;
+  } 
+  if ($("#email").val() == "") {
+    toastr.error("Email boş bırakılamaz!");
+    return false;
+  } 
+  $.ajax({
+    type: "POST",
+    data: formum,
+    url: "../action/action.php?action=kullaniciGuncelle",
+    success: function(data) {
+      toastr.success("Güncelleme işlemi başarılı!");
+      $("#kategoriBodyDiv").load("../action/action.php?action=kullaniciList");
+      $("#animationModal").modal('toggle');
+      //window.location.reload(false);
     }
-
-  }
+  });
+}
   // Kullanıcıya verdiği id
 
   function editBtn(e) {
