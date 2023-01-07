@@ -179,7 +179,7 @@ include 'includes/footer.php';
       <!-- Email kontrol -->
       <input onkeyup="emailKontrol(this)" required type="email" class="form-control mb-4" name="email" id="email" placeholder="Kullanıcı Email">
       <label>Şifre Belirleyin</label>
-      <input type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
+      <input required type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
 
       <button type="submit" class="btn btn-primary mb-2 d-grid w-100">Kayıt Et</button>
     </form>
