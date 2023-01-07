@@ -141,23 +141,25 @@ switch ($action) {
 
 
 	case 'kullaniciGuncelle':
-
 		$id = $_POST['id'];
 		$ad_soyad = $_POST['ad_soyad'];
 		$yetki = $_POST['yetki'];
 		$email = $_POST['email'];
-		$sonuc = $vt->guncelle("kullanici", array(
-			"ad_soyad" => $ad_soyad,
-			"email" => $email,
-			"yetki" => $yetki
+			if ($ad_soyad == "") {
+				echo "Ad Soyad boş bırakılamaz!";
+				return;
+			} 
+			else {
+	$sonuc = $vt->guncelle("kullanici", array(
+	"ad_soyad" => $ad_soyad,
+	"email" => $email,
+	"yetki" => $yetki
+	), "id = '{$id}'");
 
-		), "id = '{$id}'");
-		/// logs
-		$dizi =  array(
-			"islem" => "Kullanıcı Güncellendi"
-		);
+	$dizi = array("islem" => "Kullanıcı Güncellendi");
 		$sonuc = $vt->ekle("logs", $dizi);
-		break;
+	}
+break;
 
 
 	case 'kullaniciEditBody':
