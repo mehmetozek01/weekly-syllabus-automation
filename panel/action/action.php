@@ -176,15 +176,15 @@ break;
 			<div class="mb-3">
 
 				<select class="form-control mb-4" name="yetki" id="">
-					<option <?php if ($yetki == 0) {
-								echo "selected";
-							} ?> value="0">Admin</option>
 					<option <?php if ($yetki  == 1) {
 								echo "selected";
-							} ?> value="1">Kullanıcı</option>
+							} ?> value="1">Müdür Yardımcısı</option>
 					<option <?php if ($yetki  == 2) {
 								echo "selected";
-							} ?> value="2">Misafir</option>
+							} ?> value="2">Öğretmen</option>
+					<option <?php if ($yetki == 3) {
+								echo "selected";
+							} ?> value=3>Öğrenci</option>
 				</select>
 				<label>Kullanıcı Ad Soyad *</label>
 				<input required type="text" class="form-control mb-4" value="<?php echo $ad_soyad; ?>" name="ad_soyad" placeholder="Kullanıcı Ad Soyad">
