@@ -193,9 +193,13 @@ if ($yetki != 1 && $yetki != 5) {
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button2">Yeni Sutun Ekle</button>
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
+                <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#pazartesi" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
                 <button class="btn btn-primary btn-next">
                   <span class="d-sm-inline-block d-none me-sm-1">
@@ -233,9 +237,13 @@ if ($yetki != 1 && $yetki != 5) {
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
+              <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#sali" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
                 <button class="btn btn-primary btn-next">
                   <span class="d-sm-inline-block d-none me-sm-1">
@@ -272,9 +280,13 @@ if ($yetki != 1 && $yetki != 5) {
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
+              <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#carsamba" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
                 <button class="btn btn-primary btn-next">
                   <span class="d-sm-inline-block d-none me-sm-1">
@@ -310,9 +322,13 @@ if ($yetki != 1 && $yetki != 5) {
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button5">Yeni Sutun Ekle</button>
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
+              <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#persembe" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
                 <button class="btn btn-primary btn-next">
                   <span class="d-sm-inline-block d-none me-sm-1">
@@ -349,9 +365,13 @@ if ($yetki != 1 && $yetki != 5) {
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
+              <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#cuma" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
                 <button class="btn btn-primary btn-next">
                   <span class="d-sm-inline-block d-none me-sm-1">
@@ -429,9 +449,13 @@ if ($yetki != 1 && $yetki != 5) {
 
 
               <div class="col-12 d-flex justify-content-between">
-                <button class="btn btn-primary btn-prev">
+              <button class="btn btn-primary btn-prev">
                   <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
+                  <span class="d-sm-inline-block d-none">
+                    <a href="#cumartesi" style="color: white;">
+                    Geri
+                  </a>
+                  </span>
                 </button>
 
               </div>
