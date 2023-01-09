@@ -228,13 +228,13 @@
                               </div>
                             </div>
                             <div class="flex-grow-1">
-                              <span class="fw-semibold d-block lh-1">Panel Yöneticisi</span>
-                              <small>Yetkili</small>
+                              <span class="fw-semibold d-block lh-1">Yetkili</span>
+                              <small>Ders Programı Otomasyonu</small>
                             </div>
                           </div>
                         </a>
                       </li>
-                      <li>
+                      <!-- <li>
                         <div class="dropdown-divider"></div>
                       </li>
                     
@@ -249,7 +249,7 @@
                             >
                           </span>
                         </a>
-                      </li>
+                      </li> -->
                       <li>
                         <div class="dropdown-divider"></div>
                       </li>
