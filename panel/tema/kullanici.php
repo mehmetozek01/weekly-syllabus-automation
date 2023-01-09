@@ -166,7 +166,6 @@ include 'includes/footer.php';
       <!-- Kullanıcı yetkisi -->
       <label>Yetki*</label>
       <select class="form-control mb-4" name="yetki" id="">
-        <option value="0">Müdür</option>
         <option value="1">Müdür Yardımcısı</option>
         <option value="2">Öğretmen</option>
         <option value="3">Öğrenci</option>
