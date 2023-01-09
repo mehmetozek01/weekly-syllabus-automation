@@ -27,7 +27,7 @@ if ($yetki != 1 && $yetki != 5) {
                         <form action="../action/action.php?action=sinifEkle" method="post" enctype="multipart/form-data">
                             <div class="alert alert-primary" role="alert">Yeni Sınıf Ekleme</div>
                             <div class="mb-3">
-                                <label for="formFile" class="form-label  ">Başlık * </label>
+                                <label for="formFile" class="form-label  ">Sınıf * </label>
                                 <input required class="form-control mb-2" name="baslik" type="text" id="formFile" placeholder="Başlık">
                                 <label for="formFile" class="form-label  ">Öğretmen * </label>
                                 <select class="form-control mb-2" name="ogretmen_id">
