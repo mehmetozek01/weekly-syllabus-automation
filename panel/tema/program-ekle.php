@@ -159,7 +159,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                    <a href="#sali" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
@@ -194,7 +198,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                    <a href="#carsamba" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
@@ -230,7 +238,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                  <a href="#persembe" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
@@ -265,7 +277,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                  <a href="#cuma" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
@@ -299,7 +315,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                  <a href="#cumartesi" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
@@ -334,7 +354,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <span class="d-sm-inline-block d-none">Geri</span>
                 </button>
                 <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
+                  <span class="d-sm-inline-block d-none me-sm-1">
+                  <a href="#social-links-vertical" style="color: white;">
+                    İleri
+                    </a>
+                  </span>
                   <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
                 </button>
 
