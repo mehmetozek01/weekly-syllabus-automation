@@ -111,7 +111,11 @@ include 'includes/header.php';
         
        
                                 ?> 
+<<<<<<< HEAD
                                             <td class="text-nowrap">
+=======
+                                <td class="text-nowrap">
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
                                                 <?php echo $sinif_baslik;  ?>
                                             </td>
   

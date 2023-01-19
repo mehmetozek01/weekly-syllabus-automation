@@ -51,4 +51,8 @@ if ($yetki != 1 && $yetki != 5) {
             <?php
 
             include 'includes/footer.php';
+<<<<<<< HEAD
             ?>
+=======
+            ?>
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be

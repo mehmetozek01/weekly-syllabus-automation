@@ -29,12 +29,20 @@ if ($yetki != 1 && $yetki != 5) {
                             <div class="alert alert-primary" role="alert">Yeni Ders Ekleme</div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label  ">Ders Kodu * </label>
+<<<<<<< HEAD
                                 <input required class="form-control mb-2" name="derskodu" type="text" id="derskodu" placeholder="Ders Kodunu Giriniz"pattern="^[a-zA-Z0-9]{0,9}$" oninvalid="this.setCustomValidity('En fazla 6 hane girilebilir')">
+=======
+                                <input required class="form-control mb-2" name="derskodu" type="text" id="derskodu" placeholder="Ders Kodunu Giriniz" pattern="[0-9]{0,6}" oninvalid="this.setCustomValidity('En fazla 6 hane girilebilir')">
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
                                 <label for="formFile" class="form-label  ">Ders Adı * </label>
                                 <input required class="form-control mb-2" name="dersadi" type="text" id="dersadi" placeholder="Ders Adını Giriniz">
                                 <label for="formFile" class="form-label  ">Ders Saati * </label>
                                 <input required class="form-control mb-2" name="derstime" type="text" id="derstime" placeholder="Ders Saatini Giriniz" pattern="[0-8]" oninvalid="this.setCustomValidity('En fazla 8 ders saati seçilebilir')">
+<<<<<<< HEAD
                                 <label for="formFile" class="form-label  ">Öğretmen * </label>
+=======
+                                <label for="formFile" class="form-label  ">Öğretmen Adı * </label>
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
                                 <select class="form-control mb-2" name="ogretmen_id">
                                     <?php
                                     $listele = $vt->select("kullanici", " where yetki = 2 ");
@@ -68,6 +76,7 @@ if ($yetki != 1 && $yetki != 5) {
                             </thead>
                             <tbody class="table-border-bottom-0">
                             <?php
+<<<<<<< HEAD
                                 $listele = $vt->select("dersler", "");
                                 if (!empty($listele)) {
                                     foreach ($listele as $key => $value) {
@@ -80,12 +89,29 @@ if ($yetki != 1 && $yetki != 5) {
                             ?>
                                             
                                             <td class="text-nowrap">
+=======
+    $listele = $vt->select("dersler", "");
+    if (!empty($listele)) {
+        foreach ($listele as $key => $value) {
+            $ogretmen = $vt->select("kullanici", "WHERE id = ".$value['ogretmen_id']);
+            echo '<tr>';
+            echo '<td>'.$value['derskodu'].'</td>';
+            echo '<td>'.$value['dersadi'].'</td>';
+            echo '<td>'.$value['derstime'].'</td>';
+            echo '<td>'.$ogretmen[0]['ad_soyad'].'</td>';              
+?>
+                                            
+               <td class="text-nowrap">
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
                                                 <!-- Yetkili ise silme butonu gelir -->
                                             <?php
                                                 if ($yetki == 1 || $yetki == 5) {?>
                                               
                                             <button onclick="dersDelete(this)" class="btn btn-icon btn-outline-reddit"  data-id="<?php echo $value['id']; ?>"><i class="fa-solid fa-trash-can"></i></button>
+<<<<<<< HEAD
                                             
+=======
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
                                             <?php } ?>
                                             </td>
                                         </tr>
@@ -137,3 +163,10 @@ if ($yetki != 1 && $yetki != 5) {
     }
 </script>
 <!-- Footer kısmını import etmemiz için gerekli olan kod parçacığı -->
+<<<<<<< HEAD
+=======
+<?php
+
+include 'includes/footer.php';
+?> 
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be

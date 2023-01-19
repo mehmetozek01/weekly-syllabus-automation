@@ -42,7 +42,12 @@
           <div data-i18n="Dersler">Dersler</div>
         </a>
       </li>
+<<<<<<< HEAD
       
+=======
+	  
+	  
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
       
       <!-- Yetkisi varsa burayı görebilir -->
     <?php } elseif ($yetki == 1 || $yetki == 5) { ?>
@@ -67,12 +72,24 @@
           <div data-i18n="Dersler">Dersler</div>
         </a>
       </li>
+<<<<<<< HEAD
       <li class="menu-item ">
         <a href="yardim.php" class="menu-link">
           <i class="menu-icon tf-icons fa-brands fa-buffer"></i>
           <div data-i18n="Yardım">Yardım</div>
         </a>
       </li>
+=======
+
+	  
+	  <li class="menu-item ">
+      <a href="yardim.php" class="menu-link">
+        <i class="menu-icon tf-icons fa-brands fa-buffer"></i>
+        <div data-i18n="Yardım">Yardım</div>
+      </a>
+    </li>
+      
+>>>>>>> c07e20af7726e8c06d8ee07aed5268482a0437be
     
       <li class="menu-item">
         <a href="program-ekle.php" class="menu-link menu-toggle">
