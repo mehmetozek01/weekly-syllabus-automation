@@ -34,7 +34,6 @@ if ($yetki != 1 && $yetki != 5) {
                                 <input required class="form-control mb-2" name="dersadi" type="text" id="dersadi" placeholder="Ders Adını Giriniz">
                                 <label for="formFile" class="form-label  ">Ders Saati * </label>
                                 <input required class="form-control mb-2" name="derstime" type="text" id="derstime" placeholder="Ders Saatini Giriniz" pattern="[0-8]" oninvalid="this.setCustomValidity('En fazla 8 ders saati seçilebilir')">
-                                <label for="formFile" class="form-label  ">Öğretmen Adı * </label>
                                 <select class="form-control mb-2" name="ogretmen_id">
                                     <?php
                                     $listele = $vt->select("kullanici", " where yetki = 2 ");
@@ -68,18 +67,18 @@ if ($yetki != 1 && $yetki != 5) {
                             </thead>
                             <tbody class="table-border-bottom-0">
                             <?php
-    $listele = $vt->select("dersler", "");
-    if (!empty($listele)) {
-        foreach ($listele as $key => $value) {
-            $ogretmen = $vt->select("kullanici", "WHERE id = ".$value['ogretmen_id']);
-            echo '<tr>';
-            echo '<td>'.$value['derskodu'].'</td>';
-            echo '<td>'.$value['dersadi'].'</td>';
-            echo '<td>'.$value['derstime'].'</td>';
-            echo '<td>'.$ogretmen[0]['ad_soyad'].'</td>';              
-?>
+                                $listele = $vt->select("dersler", "");
+                                if (!empty($listele)) {
+                                    foreach ($listele as $key => $value) {
+                                        $ogretmen = $vt->select("kullanici", "WHERE id = ".$value['ogretmen_id']);
+                                        echo '<tr>';
+                                        echo '<td>'.$value['derskodu'].'</td>';
+                                        echo '<td>'.$value['dersadi'].'</td>';
+                                        echo '<td>'.$value['derstime'].'</td>';
+                                        echo '<td>'.$ogretmen[0]['ad_soyad'].'</td>';              
+                            ?>
                                             
-               <td class="text-nowrap">
+                                            <td class="text-nowrap">
                                                 <!-- Yetkili ise silme butonu gelir -->
                                             <?php
                                                 if ($yetki == 1 || $yetki == 5) {?>
@@ -136,7 +135,3 @@ if ($yetki != 1 && $yetki != 5) {
     }
 </script>
 <!-- Footer kısmını import etmemiz için gerekli olan kod parçacığı -->
-<?php
-
-include 'includes/footer.php';
-?> 

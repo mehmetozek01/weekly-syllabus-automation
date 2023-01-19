@@ -145,7 +145,7 @@ if ($yetki != 1 && $yetki != 5) {
             <div id="dersler" class="content">
               <div class="content-header mb-3">
                 <h6 class="mb-0">Ders program Bilgi</h6>
-                <small>Ders Bilgilerini Giriniz.</small>
+                <small>Ders Bilgileirni Giriniz.</small>
               </div>
 
               <div class="container" id="clone_wrapper2">
@@ -160,16 +160,6 @@ if ($yetki != 1 && $yetki != 5) {
     }
     ?>
 </select>
-                  
-                      
-
-
-
-                            </select>
-                    
-
-                    </select>
-
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button2">Yeni Sutun Ekle</button>
@@ -193,7 +183,10 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="pazartesi_saat[]" class="form-control">
                   </div>
 
-                 
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="pazartesi_program[]" class="form-control" placeholder="Program içeriği">
+                  </div>
                 </div>
                 
  
@@ -223,7 +216,10 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="sali_saat[]" class="form-control">
                   </div>
 
-                  
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="sali_program[]" class="form-control" placeholder="Program içeriği">
+                  </div>
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button2">Yeni Sutun Ekle</button>
@@ -248,7 +244,10 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="carsamba_saat[]" class="form-control">
                   </div>
 
-                  
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="carsamba_program[]" class="form-control" placeholder="Program içeriği">
+                  </div>
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button3">Yeni Sutun Ekle</button>
@@ -273,7 +272,10 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="persembe_saat[]" class="form-control">
                   </div>
 
-                  
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="persembe_program[]" class="form-control" placeholder="Program içeriği">
+                  </div>
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button4">Yeni Sutun Ekle</button>
@@ -299,7 +301,10 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="cuma_saat[]" class="form-control">
                   </div>
 
-                  
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="cuma_program[]" class="form-control" placeholder="Program içeriği">
+                  </div>
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button5">Yeni Sutun Ekle</button>
@@ -320,6 +325,11 @@ if ($yetki != 1 && $yetki != 5) {
                   <div class="col-md-6">
                     <label for="">Saat Aralığı</label>
                     <input type="time" name="cumartesi_saat[]" class="form-control">
+                  </div>
+
+                  <div class="col-md-6">
+                    <label for="">Program İçeriği</label>
+                    <input type="text" name="cumartesi_program[]" class="form-control" placeholder="Program içeriği">
                   </div>
                 </div>
               </div>
@@ -467,8 +477,7 @@ if ($yetki != 1 && $yetki != 5) {
         .appendTo($('#clone_wrapper6'));
     });
   </script>
-    
-    <script>
+  <script>
     ClassicEditor
       .create(document.querySelector('#program_aciklama'))
       .then(newEditor => {
@@ -512,22 +521,16 @@ if ($yetki != 1 && $yetki != 5) {
     });
   </script>
    
-  <script>
-   var inputs = document.querySelectorAll("input[type='time']");
-for (var i = 0; i < inputs.length; i++) {
-    inputs[i].addEventListener("change", function(){
-        var selectedTime = new Date("1970-01-01 " + this.value).getTime();
+   <script>
+    var input = document.querySelector("input[type='time']");
+    input.addEventListener("change", function(){
+        var selectedTime = new Date("1970-01-01 " + input.value).getTime();
         var minTime = new Date("1970-01-01 08:30").getTime();
-        var maxTime = new Date("1970-01-01 17:00").getTime();
         if(selectedTime < minTime) {
             alert("Lütfen seçtiğiniz saat 08:30'dan sonra olsun");
-            this.value = "08:30";
-        } else if (selectedTime > maxTime) {
-            alert("Lütfen seçtiğiniz saat 17:00'den önce olsun");
-            this.value = "17:00";
+            input.value = "08:30";
         }
     });
-}
 </script>
  
 

@@ -21,7 +21,7 @@ if ($yetki != 1 && $yetki != 5) {
             <!-- User Sidebar -->
             <div class="col-xl-12 col-lg-12 col-md-12 order-1 order-md-0">
                 <!-- User Card -->
-                <!-- Yeni sınıf ekleme varsa öğretmen belirleme -->
+                <!-- Yardım sekmesi -->
 
                 <div class="card mb-4">
                     <div class="card-body">
