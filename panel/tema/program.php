@@ -52,6 +52,10 @@ include 'includes/header.php';
                         <table class="table border-top">
                             <thead>
                                 <tr>
+                                <th>Ders Kodu</th>
+                                    <th>Ders Adı</th>
+                                    <th>Ders Saati</th> 
+                                    <th>Öğretmen</th> 
                                     <th>Sınıf</th>
                                     <th>Pazartesi</th>
                                     <th>Salı</th>
@@ -87,15 +91,35 @@ include 'includes/header.php';
                                         foreach ($sinif as $akey => $avalue) {
                                             $sinif_baslik = $avalue['baslik'];
                                         }
-
-
-
+                                         
                                 ?>
                                 <!-- Günlere eklenen ders saati ve ders ismini kontrol eder -->
-                                        <tr>
-                                            <td class="text-nowrap">
+                                <tr>
+                                 <?php
+                                    $listele = $vt->select("dersler", "WHERE id = ".$value['ders_id']);
+                                    if (!empty($listele)) {
+                                        foreach ($listele as $key => $value) {  
+                                            $ogretmen = $vt->select("kullanici", "WHERE id = ".$value['ogretmen_id']); 
+                                            echo '<tr>';
+                                            echo '<td>'.$value['derskodu'].'</td>';
+                                            echo '<td>'.$value['dersadi'].'</td>';
+                                            echo '<td>'.$value['derstime'].'</td>';    
+                                            echo '<td>'.$ogretmen[0]['ad_soyad'].'</td>'; 
+                                        }}
+                                        
+     
+        
+       
+                                ?> 
+                                <td class="text-nowrap">
                                                 <?php echo $sinif_baslik;  ?>
                                             </td>
+  
+                                    
+   
+               
+  
+                                    
                                             <td class="text-nowrap">
                                                 <?php
                                                 if ($pazartesi_saat != "") { 
@@ -106,6 +130,7 @@ include 'includes/header.php';
                                                         echo $value." ".$pazartesi_program[$key]."<br>";
                                                     }
                                                  }
+                                                 
                                                 ?>
                                             </td>
                                             <td class="text-nowrap">
