@@ -28,18 +28,8 @@ if ($yetki != 1 && $yetki != 5) {
                             <div class="alert alert-primary" role="alert">Yeni Sınıf Ekleme</div>
                             <div class="mb-3">
                                 <label for="formFile" class="form-label  ">Sınıf * </label>
-                                <input required class="form-control mb-2" name="baslik" type="text" id="formFile" placeholder="Başlık">
-                                <label for="formFile" class="form-label  ">Öğretmen * </label>
-                                <select class="form-control mb-2" name="ogretmen_id">
-                                    <?php
-                                    $listele = $vt->select("kullanici", " where yetki = 2 ");
-                                    foreach ($listele as $key => $value) {
-                                        echo '
-                                        <option value="' . $value['id'] . '">' . $value['ad_soyad'] . '</option>
-                                        ';
-                                    }
-                                    ?>
-                                </select>
+                                <input required class="form-control mb-2" name="baslik" type="text" id="formFile" placeholder="Sınıf">
+                                 
                             </div>
                             <button type="submit" class="btn btn-info col-md-12 ">Yeni Sınıf Ekle</button>
                         </form>
