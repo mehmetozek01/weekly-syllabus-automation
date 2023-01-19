@@ -36,8 +36,14 @@
          <div data-i18n="Programlar">Programlar</div>
         </a>
       </li>
-      
-      
+      <li class="menu-item ">
+        <a href="dersler.php" class="menu-link">
+          <i class="menu-icon tf-icons fa-brands fa-buffer"></i>
+          <div data-i18n="Dersler">Dersler</div>
+        </a>
+      </li>
+	  
+	  
       
       <!-- Yetkisi varsa burayı görebilir -->
     <?php } elseif ($yetki == 1 || $yetki == 5) { ?>
@@ -56,7 +62,22 @@
           <div data-i18n="Sınıflar">Sınıflar</div>
         </a>
       </li>
+      <li class="menu-item ">
+        <a href="dersler.php" class="menu-link">
+          <i class="menu-icon tf-icons fa-brands fa-buffer"></i>
+          <div data-i18n="Dersler">Dersler</div>
+        </a>
+      </li>
 
+	  
+	  <li class="menu-item ">
+      <a href="yardim.php" class="menu-link">
+        <i class="menu-icon tf-icons fa-brands fa-buffer"></i>
+        <div data-i18n="Yardım">Yardım</div>
+      </a>
+    </li>
+      
+    
       <li class="menu-item">
         <a href="javascript:void(0);" class="menu-link menu-toggle">
           <i class="menu-icon tf-icons  bx bx-food-menu"></i>

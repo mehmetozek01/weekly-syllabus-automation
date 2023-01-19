@@ -6,7 +6,7 @@
       <script>
         document.write(new Date().getFullYear());
       </script>
-      , made in ❤️ by
+      , made in  ©  by
       <a href="#" target="_blank" class="footer-link fw-semibold">MMCE</a>
     </div>
     <div>

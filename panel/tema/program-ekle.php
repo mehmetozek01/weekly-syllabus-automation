@@ -34,6 +34,17 @@ if ($yetki != 1 && $yetki != 5) {
         <div class="bs-stepper-header">
           
           <!-- Haftalık ders programının seçilecek gün -->
+          <div class="step" data-target="#dersler">
+            <button type="button" class="step-trigger">
+              <span class="bs-stepper-circle">
+                <i class="bx bx-detail"></i>
+              </span>
+              <span class="bs-stepper-label">
+                <span class="bs-stepper-title">Dersler</span>
+                <span class="bs-stepper-subtitle">Günlük Program</span>
+              </span>
+            </button>
+          </div>
           <div class="step" data-target="#pazartesi">
             <button type="button" class="step-trigger">
               <span class="bs-stepper-circle">
@@ -131,6 +142,43 @@ if ($yetki != 1 && $yetki != 5) {
           <form action="../action/action.php?action=yeni_program" method="POST">
             <!-- Account Details -->
             <!-- Gün içinde verilecek ders sayısı, ders ismi ve hangi saatler arasında olacağı -->
+            <div id="dersler" class="content">
+              <div class="content-header mb-3">
+                <h6 class="mb-0">Ders program Bilgi</h6>
+                <small>Ders Bilgilerini Giriniz.</small>
+              </div>
+
+              <div class="container" id="clone_wrapper2">
+                <div class="row mb-4">
+                  
+                  <label for="formFile" class="form-label  ">Ders Adı </label>
+                <select class="form-control mb-2" name="ders_id" id="ders_id">
+    <?php
+    $listele_ders = $vt->select("dersler", "");
+    foreach ($listele_ders as $key => $value) {
+        echo '<option value="' . $value['id'] . '">' . $value['dersadi'] . '</option>';
+    }
+    ?>
+</select>
+                  
+                      
+
+
+
+                            </select>
+                    
+
+                    </select>
+
+                </div>
+              </div>
+              <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button2">Yeni Sutun Ekle</button>
+
+              <div class="col-12 d-flex justify-content-between mt-2">
+               
+
+              </div>
+            </div>
             <div id="pazartesi" class="content">
               <div class="content-header mb-3">
                 <h6 class="mb-0">Pazartesi Program Bilgi</h6>
@@ -145,23 +193,18 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="pazartesi_saat[]" class="form-control">
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="pazartesi_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
+                 
                 </div>
+                
+ 
+ 
+  
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button">Yeni Sutun Ekle</button>
               <!-- /Form Repeater -->
               <div class="col-12 d-flex justify-content-between mt-4">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+                 
+                 
 
               </div>
             </div>
@@ -180,23 +223,13 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="sali_saat[]" class="form-control">
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="sali_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
+                  
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button2">Yeni Sutun Ekle</button>
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+               
 
               </div>
             </div>
@@ -215,24 +248,14 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="carsamba_saat[]" class="form-control">
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="carsamba_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
+                  
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button3">Yeni Sutun Ekle</button>
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+            
 
               </div>
             </div>
@@ -250,24 +273,14 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="persembe_saat[]" class="form-control">
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="persembe_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
+                  
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button4">Yeni Sutun Ekle</button>
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+             
 
               </div>
             </div>
@@ -286,22 +299,12 @@ if ($yetki != 1 && $yetki != 5) {
                     <input type="time" name="cuma_saat[]" class="form-control">
                   </div>
 
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="cuma_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
+                  
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button5">Yeni Sutun Ekle</button>
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+           
 
               </div>
             </div>
@@ -318,25 +321,13 @@ if ($yetki != 1 && $yetki != 5) {
                     <label for="">Saat Aralığı</label>
                     <input type="time" name="cumartesi_saat[]" class="form-control">
                   </div>
-
-                  <div class="col-md-6">
-                    <label for="">Program İçeriği</label>
-                    <input type="text" name="cumartesi_program[]" class="form-control" placeholder="Program içeriği">
-                  </div>
                 </div>
               </div>
               <button type="button" class="btn btn-info col-md-12 mb-4" id="clone_button6">Yeni Sutun Ekle</button>
 
 
               <div class="col-12 d-flex justify-content-between mt-2">
-                <button class="btn btn-label-secondary btn-prev" disabled>
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
-                <button class="btn btn-primary btn-next">
-                  <span class="d-sm-inline-block d-none me-sm-1">İleri</span>
-                  <i class="bx bx-chevron-right bx-sm me-sm-n2"></i>
-                </button>
+             
 
               </div>
             </div>
@@ -389,26 +380,25 @@ if ($yetki != 1 && $yetki != 5) {
               </div>
 
               <div class="col-md-12 mt-3">
+              
                 <label for="formFile" class="form-label  ">Sınıf * </label>
                 <select class="form-control mb-2" name="sinif">
                   <?php
-                  $listele = $vt->select("sinif", " ");
-                  foreach ($listele as $key => $value) {
+                  $listele_sinif = $vt->select("sinif", " ");
+                  foreach ($listele_sinif as $key => $value) {
                     echo '
                      <option value="' . $value['id'] . '">' . $value['baslik'] . '</option>
                      ';
                   }
                   ?>
                 </select>
+              
               </div>
 
 
 
               <div class="col-12 d-flex justify-content-between">
-                <button class="btn btn-primary btn-prev">
-                  <i class="bx bx-chevron-left bx-sm ms-sm-n2"></i>
-                  <span class="d-sm-inline-block d-none">Geri</span>
-                </button>
+               
 
               </div>
 
@@ -438,6 +428,7 @@ if ($yetki != 1 && $yetki != 5) {
 
   include 'includes/footer.php';
   ?>
+ 
   <script>
     $('#clone_button').click(function() {
       $('#clone_wrapper div:first')
@@ -476,7 +467,8 @@ if ($yetki != 1 && $yetki != 5) {
         .appendTo($('#clone_wrapper6'));
     });
   </script>
-  <script>
+    
+    <script>
     ClassicEditor
       .create(document.querySelector('#program_aciklama'))
       .then(newEditor => {
@@ -519,3 +511,23 @@ if ($yetki != 1 && $yetki != 5) {
       }
     });
   </script>
+   
+  <script>
+   var inputs = document.querySelectorAll("input[type='time']");
+for (var i = 0; i < inputs.length; i++) {
+    inputs[i].addEventListener("change", function(){
+        var selectedTime = new Date("1970-01-01 " + this.value).getTime();
+        var minTime = new Date("1970-01-01 08:30").getTime();
+        var maxTime = new Date("1970-01-01 17:00").getTime();
+        if(selectedTime < minTime) {
+            alert("Lütfen seçtiğiniz saat 08:30'dan sonra olsun");
+            this.value = "08:30";
+        } else if (selectedTime > maxTime) {
+            alert("Lütfen seçtiğiniz saat 17:00'den önce olsun");
+            this.value = "17:00";
+        }
+    });
+}
+</script>
+ 
+
