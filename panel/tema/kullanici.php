@@ -60,6 +60,7 @@ if ($yetki != 1 && $yetki != 5) {
                 <tr>
                   <th>S. No</th>
                   <th>Yetki </th>
+                  <th>Ünvan</th>
                   <th>Ad Soyad</th>
                   <th>Email</th>
                   <th>İşlem</th>
@@ -93,6 +94,7 @@ if ($yetki != 1 && $yetki != 5) {
                           } ?>  value="3">Öğrenci</option>
                           </select>
                       </td>
+                      <td><?php echo $value['unvan']; ?> </td>
                       <td><?php echo $value['ad_soyad']; ?> </td>
                       <td><?php echo $value['email']; ?> </td>
                       <td>
@@ -171,6 +173,9 @@ include 'includes/footer.php';
         <option value="3">Öğrenci</option>
       </select>
       <!-- Kullanıcı Ad Soyad -->
+      <label>Ünvan *</label>
+      <input  type="text" class="form-control mb-4" name="unvan" placeholder="Ünvan">
+      <!-- Kullanıcı Email -->
       <label>Kullanıcı Ad Soyad *</label>
       <input required type="text" class="form-control mb-4" name="ad_soyad" placeholder="Kullanıcı Ad Soyad">
       <!-- Kullanıcı Email -->
