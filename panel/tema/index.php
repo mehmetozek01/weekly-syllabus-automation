@@ -22,7 +22,7 @@ include 'includes/header.php';
             <!-- Toplam Kullanıcı -->
             <div class="card-body text-center">
               <div class="avatar avatar-md mx-auto mb-3">
-                <span class="avatar-initial rounded-circle bg-label-info"><i class="bx bx-edit fs-3"></i></span>
+                <span class="avatar-initial rounded-circle bg-label-info"><i class="bx bx-group fs-3"></i></span>
               </div>
               <span class="d-block mb-1 text-nowrap">Toplam Kullanıcı</span>
               <h2 class="mb-0">12</h2>
@@ -46,7 +46,7 @@ include 'includes/header.php';
             <div class="card-body text-center">
               <!-- Öğretmenler -->
               <div class="avatar avatar-md mx-auto mb-3">
-                <span class="avatar-initial rounded-circle bg-label-danger"><i class="bx bx-message-square-detail fs-3"></i></span>
+                <span class="avatar-initial rounded-circle bg-label-danger"><i class="bx bx-book-bookmark fs-3"></i></span>
               </div>
               <span class="d-block mb-1 text-nowrap">Öğretmenler</span>
               <h2 class="mb-0">29</h2>
@@ -58,7 +58,7 @@ include 'includes/header.php';
             <div class="card-body text-center">
               <!-- Öğrenciler -->
               <div class="avatar avatar-md mx-auto mb-3">
-                <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-cube fs-3"></i></span>
+                <span class="avatar-initial rounded-circle bg-label-primary"><i class="bx bx-user fs-3"></i></span>
               </div>
               <span class="d-block mb-1 text-nowrap">Öğrenciler</span>
               <h2 class="mb-0">72</h2>

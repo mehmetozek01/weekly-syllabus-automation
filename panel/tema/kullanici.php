@@ -60,6 +60,7 @@ if ($yetki != 1 && $yetki != 5) {
                 <tr>
                   <th>S. No</th>
                   <th>Yetki </th>
+                  <th>Ünvan</th>
                   <th>Ad Soyad</th>
                   <th>Email</th>
                   <th>İşlem</th>
@@ -93,6 +94,7 @@ if ($yetki != 1 && $yetki != 5) {
                           } ?>  value="3">Öğrenci</option>
                           </select>
                       </td>
+                      <td><?php echo $value['unvan']; ?> </td>
                       <td><?php echo $value['ad_soyad']; ?> </td>
                       <td><?php echo $value['email']; ?> </td>
                       <td>
@@ -166,18 +168,20 @@ include 'includes/footer.php';
       <!-- Kullanıcı yetkisi -->
       <label>Yetki*</label>
       <select class="form-control mb-4" name="yetki" id="">
-        <option value="0">Müdür</option>
         <option value="1">Müdür Yardımcısı</option>
         <option value="2">Öğretmen</option>
         <option value="3">Öğrenci</option>
       </select>
       <!-- Kullanıcı Ad Soyad -->
+      <label>Ünvan *</label>
+      <input  type="text" class="form-control mb-4" name="unvan" placeholder="Ünvan">
+      <!-- Kullanıcı Email -->
       <label>Kullanıcı Ad Soyad *</label>
       <input required type="text" class="form-control mb-4" name="ad_soyad" placeholder="Kullanıcı Ad Soyad">
       <!-- Kullanıcı Email -->
       <label>Kullanıcı Email *</label>
       <!-- Email kontrol -->
-      <input required type="email" name="email"  placeholder="Kullanıcı Email" class="form-control mb-4" id="email" pattern="[a-z0-9._%+-]+@gmail\.com|[a-z0-9._%+-]+@hotmail\.com|[a-z0-9._%+-]+@okul\.com" oninvalid="this.setCustomValidity('Lütfen gmail.com, hotmail.com veya okul.com domainlerinden birini kullanan bir email adresi girin')" oninput="setCustomValidity('')">
+      <input required type="email" name="email"  placeholder="Kullanıcı Email" class="form-control mb-4" id="email" pattern="[a-z0-9._%+-]+@gmail\.com|[a-z0-9._%+-]+@hotmail\.com|[a-z0-9._%+-]+@okul\.com" oninvalid="this.setCustomValidity('Lütfen mail adresinizi doğru girin')" oninput="setCustomValidity('')">
       <label>Şifre Belirleyin</label>
       <input required type="password" class="form-control mb-4" name="password" placeholder="Kullanıcı Şifre">
 
