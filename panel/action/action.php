@@ -12,15 +12,29 @@ switch ($action) {
 	case 'sinifEkle':
 
 		$baslik = $_POST['baslik'];
-		$ogretmen_id = $_POST['ogretmen_id'];
+		
 		$dizi =  array(
-			"baslik" => $baslik,
-			"ogretmen_id" => $ogretmen_id
+			"baslik" => $baslik 
+			
 		);
 		$sonuc = $vt->ekle("sinif", $dizi);
 		Header("Location:../tema/sinif.php?case=ok");
 		break;
 
+		case 'dersEkle': 
+			$derskodu = $_POST['derskodu']; 
+			$dersadi = $_POST['dersadi'];
+            $derstime = $_POST['derstime'];
+			$ogretmen_id = $_POST['ogretmen_id'];
+			$dizi =  array( 
+				"derskodu" => $derskodu,
+				"dersadi" => $dersadi,
+				"derstime" => $derstime,
+				"ogretmen_id" => $ogretmen_id
+			);
+			$sonuc = $vt->ekle("dersler", $dizi);
+			Header("Location:../tema/dersler.php?case=ok");
+			break;
 
 	case 'programDelete':
 		$id =  $_POST['id'];
@@ -34,58 +48,78 @@ switch ($action) {
 
 		break;
 
-
+		case 'dersDelete':
+			$id =  $_POST['id']; 
+			$delete = $vt->idSil("dersler", $id); 
+			break;
+			
+			
+			 
 
 	case 'yeni_program':
-
-		@$pazartesi_saat = implode(",", $_POST['pazartesi_saat']);
-		@$pazartesi_program = implode(",", $_POST['pazartesi_program']);
-		@$sali_saat = implode(",", $_POST['sali_saat']);
-		@$sali_program = implode(",", $_POST['sali_program']);
-		@$carsamba_saat = implode(",", $_POST['carsamba_saat']);
-		@$carsamba_program = implode(",", $_POST['carsamba_program']);
-		@$persembe_saat = implode(",", $_POST['persembe_saat']);
-		@$persembe_program = implode(",", $_POST['persembe_program']);
-		@$cuma_saat = implode(",", $_POST['cuma_saat']);
-		@$cuma_program = implode(",", $_POST['cuma_program']);
-		@$cumartesi_saat = implode(",", $_POST['cumartesi_saat']);
-		@$cumartesi_program = implode(",", $_POST['cumartesi_program']);
-		@$program_yayin = $_POST['program_yayin'];
-		@$sinif = $_POST['sinif'];
-		@$program_aciklama =  $_POST['program_aciklama'];
-		$dizi =  array(
-			"pazartesi_saat" => $pazartesi_saat,
-			"pazartesi_program" => $pazartesi_program,
-			"sali_saat" => $sali_saat,
-			"sali_program" => $sali_program,
-			"carsamba_saat" => $carsamba_saat,
-			"carsamba_program" => $carsamba_program,
-			"persembe_saat" => $persembe_saat,
-			"persembe_program" => $persembe_program,
-			"cuma_saat" => $cuma_saat,
-			"cuma_program" => $cuma_program,
-			"cumartesi_saat" => $cumartesi_saat,
-			"cumartesi_program" => $cumartesi_program,
-			"program_yayin" => $program_yayin,
-			"program_aciklama" => $program_aciklama,
-			"sinif" => $sinif
-		);
+	 
+	 
+			$pazartesi_saat = implode(",", $_POST['pazartesi_saat']);
+			$pazartesi_program = implode(",", $_POST['pazartesi_program']);
+			$sali_saat = implode(",", $_POST['sali_saat']);
+			$sali_program = implode(",", $_POST['sali_program']);
+			$carsamba_saat = implode(",", $_POST['carsamba_saat']);
+			$carsamba_program = implode(",", $_POST['carsamba_program']);
+			$persembe_saat = implode(",", $_POST['persembe_saat']);
+			$persembe_program = implode(",", $_POST['persembe_program']);
+			$cuma_saat = implode(",", $_POST['cuma_saat']);
+			$cuma_program = implode(",", $_POST['cuma_program']);
+			$cumartesi_saat = implode(",", $_POST['cumartesi_saat']);
+		    $cumartesi_program = implode(",", $_POST['cumartesi_program']); 
+		    $program_yayin = $_POST['program_yayin']; 
+			$derskodu = $_POST['derskodu'];
+			$derstime = $_POST['derstime'];
+			$ogretmen_id = $_POST['ogretmen_id'];
+			$ders_id = $_POST['ders_id'];
+			$dersadi = $_POST['dersadi'];
+			$sinif = $_POST['sinif'];
+		 	$program_aciklama =  $_POST['program_aciklama']; 
+			$dizi =  array(
+				"ders_id" => $ders_id,
+				"dersadi" => $dersadi,
+				"pazartesi_saat" => $pazartesi_saat,
+				"pazartesi_program" => $pazartesi_program,
+				"sali_saat" => $sali_saat,
+				"sali_program" => $sali_program,
+				"carsamba_saat" => $carsamba_saat,
+				"carsamba_program" => $carsamba_program,
+				"persembe_saat" => $persembe_saat,
+				"persembe_program" => $persembe_program,
+				"cuma_saat" => $cuma_saat,
+				"cuma_program" => $cuma_program,
+				"cumartesi_saat" => $cumartesi_saat,
+				"cumartesi_program" => $cumartesi_program,
+				"program_yayin" => $program_yayin,
+				"program_aciklama" => $program_aciklama,
+				"derskodu" => $derskodu, 
+				"derstime" => $derstime,
+				"ogretmen_id" => $ogretmen_id,
+				"sinif" => $sinif
+			
+		) ; 
 		$sonuc = $vt->ekle("program", $dizi);
 		Header("Location:../tema/program.php?case=ok");
-		break;
+	 
+		break; 
 
-
-
-	case 'emailKontrol':
-		$deger =  $_POST['deger'];
-		$kontrol = $vt->kontrol("kullanici", "where email = '{$deger}' ");
-		if ($kontrol > 0) {
-			echo 1;
-		} else {
-			echo 0;
-		}
-		break;
-
+		case 'emailKontrol':
+			$deger =  $_POST['deger'];
+			$kontrol = $vt->kontrol("kullanici", "where email = '{$deger}' ");
+			if ($kontrol > 0) {
+				echo 1;
+			} else {
+				echo 0;
+			}
+			break;
+		 
+	
+	
+	
 	case 'kullaniciDelete':
 		$id =  $_POST['id'];
 		$delete = $vt->idSil("kullanici", $id);
@@ -111,15 +145,19 @@ switch ($action) {
 						<select class="form-control mb-4" name="yetki" id="">
 							<option <?php if ($value['yetki'] == 0) {
 										echo "selected";
-									} ?> value="0">Admin</option>
+									} ?> value="0">Müdür</option>
 							<option <?php if ($value['yetki'] == 1) {
 										echo "selected";
-									} ?> value="1">User</option>
+									} ?> value="1">Müdür Yardımcısı</option>
 							<option <?php if ($value['yetki'] == 2) {
 										echo "selected";
-									} ?> value="2">Misafir</option>
+									} ?> value="2">Öğretmen</option>
+									<option <?php if ($value['yetki'] == 3) {
+										echo "selected";
+									} ?> value="3">Öğrenci</option>
 						</select>
 					</td>
+					<td><?php echo $value['unvan']; ?> </td>
 					<td><?php echo $value['ad_soyad']; ?> </td>
 					<td><?php echo $value['email']; ?> </td>
 					<td>
@@ -200,6 +238,7 @@ break;
 
 	case 'yeniKullanici':
 		$yetki = $_POST['yetki'];
+		$unvan = $_POST['unvan'];
 		$ad_soyad = $_POST['ad_soyad'];
 		$email = $_POST['email'];
 		$password = md5($_POST['password']);
@@ -213,6 +252,7 @@ break;
 			} else {
 				$dizi =  array(
 					"yetki" => $yetki,
+					"unvan" => $unvan,
 					"ad_soyad" => $ad_soyad,
 					"email" => $email,
 					"password" => $password
